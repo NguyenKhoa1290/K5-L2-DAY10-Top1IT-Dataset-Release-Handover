@@ -1,0 +1,10 @@
+image,type,verdict,note
+000000000872,bbox_drift,confirmed,"Nguyễn Đăng Khoa: 2 chân cách nhau, vật thể thực chất là 2 người, nên sec phải đánh cả người còn lại"
+000000001818,bbox_drift,rejected,"Nguyễn Đăng Khoa: Đây là 1 con ngựa hợp lệ cho sec và det, lưu dc"
+000000002153,instance_merge,confirmed,"Nguyễn Đăng Khoa: Đánh thiếu người đánh bóng chày và người ném bóng, từ chối | Nguyễn Đăng Khoa: Vẫn còn thiếu người đánh bóng chày, nên ko duyệt"
+000000006213,class_swap,rejected,Phạm Văn Hùng: Segmen đánh đúng sink
+000000012748,bbox_drift,rejected,"Phạm Văn Hùng: Seg đánh cả cha, L2 đánh con, hợp lệ"
+000000014038,missing_box,rejected,Lượng: Thấy box đánh giường
+000000015272,class_swap,rejected,"Lượng: Box đánh đúng, duyệt"
+000000015440,bbox_drift,confirmed,Lượng: Vẫn còn bus bên trái
+000000017379,class_swap,confirmed,"Lượng: Đây là ti vi, ko phải laptop"
