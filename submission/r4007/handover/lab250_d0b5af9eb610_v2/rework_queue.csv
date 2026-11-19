@@ -1,0 +1,8 @@
+image,type,annotator,reviewer,action
+000000000872,bbox_drift,A04,Q02,Realign the detection box and review
+000000007977,invalid_class,A01,Q03,Correct the detection class and review
+000000008844,missing_image,A01,Q03,Recover image and verify detection labels
+000000015440,bbox_drift,A04,Q02,Realign the detection box and review
+000000017379,class_swap,A04,Q02,Correct the detection class and review
+000000018575,duplicate_box,A04,Q01,Remove the duplicate box and review
+000000019402,bbox_out_of_bounds,A04,Q01,Redraw the box inside the image and review
