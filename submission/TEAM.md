@@ -1,8 +1,11 @@
-# Nhóm <<XX>>
+# Nhóm <Top1IT>
 
-- Seed luyện tập: <<số>>
-- Repo: <<URL>>
+- Seed luyện tập: 4007
+- Repo: https://github.com/NguyenKhoa1290/K5-L2-DAY10-Top1IT-Dataset-Release-Handover
 
 | Họ và tên | MSHV | Tài khoản GitHub | Phần chính |
 |---|---|---|---|
-| <<>> | <<>> | <<>> | <<validator luật / đối chiếu / review / bàn giao / truy vết / bảo mật>> |
+| Nguyễn Đăng Khoa | 2A202603168 | NguyenKhoa1290 |Đối chiếu detection và panoptic|
+|Phạm Văn Hùng|||Tích hợp và hồ sơ nộp,Bàn giao và truy vết|
+|Bùi Văn Thắng|||Bàn giao và truy vết|
+|Lê Đức Lượng|||Validator lỗi luật|
