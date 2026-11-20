@@ -1,0 +1,325 @@
+{
+  "parameters": {
+    "match_iou": 0.3,
+    "min_coverage": 0.8,
+    "min_area": 100,
+    "min_area_ratio": 0.001
+  },
+  "candidates": [
+    {
+      "target": "000000000872",
+      "possible_types": [
+        "bbox_drift"
+      ],
+      "reason": "Unmatched segment, best same-class mask coverage=0.956",
+      "boxes": [
+        {
+          "line": 2,
+          "class": "person",
+          "bbox": [
+            145.2596625,
+            100.67039999999999,
+            437.2097715,
+            558.02016
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 12234672,
+          "class": "person",
+          "bbox": [
+            164,
+            126,
+            429,
+            607
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000001818",
+      "possible_types": [
+        "bbox_drift"
+      ],
+      "reason": "Unmatched segment, best same-class mask coverage=0.502",
+      "boxes": [
+        {
+          "line": 1,
+          "class": "zebra",
+          "bbox": [
+            178.04032000000004,
+            1.4398999999999773,
+            640.0,
+            425.0
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 8092282,
+          "class": "zebra",
+          "bbox": [
+            0,
+            1,
+            638,
+            425
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000002153",
+      "possible_types": [
+        "bbox_drift"
+      ],
+      "reason": "Unmatched segment, best same-class mask coverage=0.762",
+      "boxes": [
+        {
+          "line": 1,
+          "class": "person",
+          "bbox": [
+            283.4,
+            274.77,
+            466.31008,
+            445.03992
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 5784894,
+          "class": "person",
+          "bbox": [
+            175,
+            0,
+            466,
+            445
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000002153",
+      "possible_types": [
+        "instance_merge"
+      ],
+      "reason": "Two separated same-class boxes each cover 20-85% of a segment and together cover at least 80%; no box covers over 90%",
+      "boxes": [
+        {
+          "line": 1,
+          "class": "person",
+          "bbox": [
+            283.4,
+            274.77,
+            466.31008,
+            445.03992
+          ]
+        },
+        {
+          "line": 4,
+          "class": "person",
+          "bbox": [
+            174.63968,
+            0.0,
+            239.32000000000002,
+            119.95008
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 5784894,
+          "class": "person",
+          "bbox": [
+            175,
+            0,
+            466,
+            445
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000006213",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "reason": "Class disagreement; IoU=0.978, mask coverage=1.000",
+      "boxes": [
+        {
+          "line": 1,
+          "class": "sports ball",
+          "bbox": [
+            406.3696,
+            253.31976250000002,
+            496.74976000000004,
+            286.8798875
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 9155032,
+          "class": "sink",
+          "bbox": [
+            407,
+            253,
+            497,
+            287
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000012748",
+      "possible_types": [
+        "bbox_drift"
+      ],
+      "reason": "Unmatched segment, best same-class mask coverage=0.939",
+      "boxes": [
+        {
+          "line": 2,
+          "class": "person",
+          "bbox": [
+            217.17023999999998,
+            188.39968,
+            480.0,
+            632.8099199999999
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 4079972,
+          "class": "person",
+          "bbox": [
+            221,
+            139,
+            480,
+            632
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000014038",
+      "possible_types": [
+        "missing_box"
+      ],
+      "reason": "Unmatched thing segment; actual area=2560 pixels",
+      "boxes": [],
+      "segments": [
+        {
+          "id": 4612213,
+          "class": "bed",
+          "bbox": [
+            303,
+            187,
+            356,
+            260
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000015272",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "reason": "Class disagreement; IoU=0.995, mask coverage=1.000",
+      "boxes": [
+        {
+          "line": 1,
+          "class": "stop sign",
+          "bbox": [
+            41.949923999999996,
+            38.910079999999994,
+            276.419804,
+            136.78016
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 5657438,
+          "class": "traffic light",
+          "bbox": [
+            42,
+            39,
+            276,
+            137
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000015440",
+      "possible_types": [
+        "bbox_drift"
+      ],
+      "reason": "Mask coverage=0.672, IoU=0.454",
+      "boxes": [
+        {
+          "line": 2,
+          "class": "bus",
+          "bbox": [
+            174.62617199999997,
+            159.95424,
+            251.899252,
+            246.19104
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 5393787,
+          "class": "bus",
+          "bbox": [
+            192,
+            183,
+            262,
+            261
+          ]
+        }
+      ]
+    },
+    {
+      "target": "000000017379",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "reason": "Class disagreement; IoU=0.992, mask coverage=1.000",
+      "boxes": [
+        {
+          "line": 1,
+          "class": "tv",
+          "bbox": [
+            145.25989800000002,
+            214.29023999999998,
+            310.64981,
+            322.16031999999996
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 12288068,
+          "class": "laptop",
+          "bbox": [
+            145,
+            214,
+            311,
+            322
+          ]
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    "000000007977.txt:6: invalid class or size"
+  ]
+}

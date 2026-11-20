@@ -9,7 +9,9 @@
 <<Trả lời bằng số của nhóm.>>
 
 ## 3. Quyết định và lineage
-<<QC v1 a/b, kết luận, vì sao R-021 phải xem lại hoặc train lại.>>
+- QC lô v1 `lab250_d0b5af9eb610` (seed `4007`) ghi nhận 15/250 ảnh hoặc cảnh lỗi, tương đương 6,0%. Nhóm ghi quyết định HOLD vì tỷ lệ vượt ngưỡng 2%.
+- Kết quả truy vấn lineage: `R-021: affected=True action=review_or_retrain`.
+- R-021 đã train trên v1. Nhóm cần đánh giá lại kết quả của run và train lại trên dữ liệu đã kiểm định nếu cần, vì mô hình hiện tại vẫn giữ các trọng số học từ v1.
 
 ## 4. Hash chứng minh gì, không chứng minh gì?
 <<>>
