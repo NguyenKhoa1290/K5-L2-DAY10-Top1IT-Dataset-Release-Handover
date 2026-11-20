@@ -71,10 +71,41 @@ def main():
     parser.add_argument('--candidates', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
-    candidates = json.loads(args.candidates.read_text(encoding='utf-8'))['candidates']
+    entries = json.loads(args.candidates.read_text(encoding='utf-8'))['candidates']
     panoptic, classes = load_delivery(args.delivery)
     images = {Path(image['file_name']).stem: image for image in panoptic['images']}
     annotations = {entry['image_id']: entry for entry in panoptic['annotations']}
+    categories = {entry['id']: entry['name'] for entry in panoptic['categories']}
+    candidates = []
+    for entry in entries:
+        if 'target' in entry:
+            candidates.append(entry)
+            continue
+        target = entry['image']
+        image = images[target]
+        boxes, _ = load_boxes(args.delivery / 'labels' / (target + '.txt'), classes, image['width'], image['height'])
+        # validate.py indexes original nonempty YOLO rows. Match by original line
+        # so an invalid class skipped by load_boxes cannot shift the selection.
+        label_path = args.delivery / 'labels' / (target + '.txt')
+        label_lines = label_path.read_text(encoding='utf-8').splitlines() if label_path.is_file() else []
+        indexed_lines = [number for number, line in enumerate(label_lines, 1) if len(line.split()) >= 5]
+        segments = {segment['id']: segment for segment in annotations[image['id']]['segments_info']}
+        for reason in entry['reasons']:
+            segment = segments.get(reason.get('segment_id'))
+            selected_segments = []
+            if segment:
+                x, y, width, height = segment['bbox']
+                selected_segments.append({'id': segment['id'], 'class': categories.get(segment['category_id'], 'unknown'),
+                                          'bbox': [x, y, x + width, y + height]})
+            index = reason.get('box_index')
+            selected_boxes = []
+            if index is not None and 0 <= index < len(indexed_lines):
+                selected_boxes = [box for box in boxes if box['line'] == indexed_lines[index]]
+            types = [reason['type']]
+            if reason.get('alt'):
+                types.append(reason['alt'])
+            candidates.append({'target': target, 'possible_types': types, 'reason': reason['detail'],
+                               'boxes': selected_boxes, 'segments': selected_segments})
     assets = {}
     for target in dict.fromkeys(candidate['target'] for candidate in candidates):
         image = images[target]

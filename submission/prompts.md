@@ -9,6 +9,8 @@
 
 ### Hiệu chỉnh sau review của nhóm
 
+Khoa báo Lượng đã có `validator/validate.py`. AI kiểm tra thấy file có kiểm lỗi luật và thuật toán sinh ứng viên riêng, nhưng dùng định dạng `image/reasons` khác với công cụ review ban đầu. AI bổ sung bộ chuyển đổi trong `review_candidates.py` để đọc cả hai định dạng, giữ tham chiếu box theo dòng nhãn gốc và chạy kiểm tra trên đầu ra riêng tại `runs/r4007/integration_check/`. Nhóm cần kiểm tra các ứng viên mới trước khi dùng kết quả thuật toán mới để chốt bài.
+
 Khoa xác nhận đã dùng confirmed để duyệt nhãn đúng trong file `D:/review_log.csv`. AI đã đảo hai giá trị verdict trong bản `runs/r4007/review_log.csv` dựa trên CSV gốc, giữ nguyên ghi chú và loại lỗi. Trang review được bổ sung diễn giải tiếng Việt cho hai lựa chọn. Nhóm cần kiểm tra lại loại lỗi ở các dòng có ghi chú chưa đủ rõ trước khi gộp errors.json. Việc đảo verdict dựa trên giải thích của người review, chưa xác minh lại nội dung ảnh.
 
 - `validator/cross_check.py` đọc dữ liệu trong delivery, ghép box–segment và xuất ứng viên cần người kiểm tra.

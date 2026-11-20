@@ -13,6 +13,8 @@ Trang chứa ảnh và mask để xem offline. Thiếu ảnh thì trang hiển t
 
 ## Tích hợp với phần lỗi luật
 
+`validate.py` hiện có phần đối chiếu riêng và tùy chọn `--candidates`. Công cụ review đọc được cả định dạng của `cross_check.py` và định dạng `image/reasons` do `validate.py` xuất. Mỗi reason được hiển thị thành một ứng viên. Khi đổi thuật toán sinh ứng viên, cần kiểm tra các ứng viên mới và đối chiếu nhật ký cũ trước khi chốt.
+
 Người phụ trách `validate.py` có thể gọi hàm sau rồi ghi kết quả dạng JSON vào đường dẫn nhận từ `--candidates`.
 
 ```python
