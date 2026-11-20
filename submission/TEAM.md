@@ -6,6 +6,6 @@
 | Họ và tên | MSHV | Tài khoản GitHub | Phần chính |
 |---|---|---|---|
 | Nguyễn Đăng Khoa | 2A202603168 | NguyenKhoa1290 |Đối chiếu detection và panoptic|
-|Phạm Văn Hùng|||Tích hợp và hồ sơ nộp,Bàn giao và truy vết|
+|Phạm Văn Hùng|2A202603161||Tích hợp và hồ sơ nộp,Bàn giao và truy vết|
 |Bùi Văn Thắng|||Bàn giao và truy vết|
 |Lê Đức Lượng|||Validator lỗi luật|
