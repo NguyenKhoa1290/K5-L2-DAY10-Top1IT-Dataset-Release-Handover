@@ -70,4 +70,4 @@ Nhóm lấy phiên bản guideline theo `jobs.csv` vì đó là quy tắc áp d�
 cho job.
 
 ## 6. Bug hoặc điểm chưa rõ trong lab (nếu có)
-<<>>
+Không có.

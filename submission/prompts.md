@@ -1,9 +1,9 @@
 # Dùng AI
-
 | # | Ai dùng | Công cụ | Prompt (tóm tắt) | AI sai ở đâu | Nhóm kiểm lại thế nào |
 |---|---|---|---|---|---|
 | 1 | Nguyễn Đăng Khoa | Codex | Hướng dẫn các công đoạn theo phần việc đã ghi trong TEAM.md. | AI dùng thông tin cũ và hướng dẫn nhầm phần validator lỗi luật. | Khoa nhắc đọc lại TEAM.md. AI đã đọc lại và sửa hướng dẫn sang đối chiếu detection và panoptic. |
 | 2 | Nguyễn Đăng Khoa | Codex | “Được, bạn hỗ trợ viết mã , và ghi promp”. Viết phần đối chiếu detection–panoptic và công cụ review theo phần việc của Khoa. | Điều kiện nghi ngờ instance_merge ban đầu quá rộng, tạo 179 ứng viên loại này trên lô 4007. AI đã bổ sung điều kiện phủ segment và loại trường hợp một box phủ gần toàn bộ segment. Ngưỡng hiện vẫn cần nhóm kiểm chứng bằng ảnh. | AI chạy kiểm tra tổng hợp cho các trường hợp sạch, khác lớp, box lệch, thiếu box và gộp segment. Chạy thật trên seed 4007 được 10 ứng viên thuộc 9 ảnh, 1 cảnh báo nhãn không hợp lệ. Lô sạch seed 5 có 50 ảnh, 0 ứng viên và 0 cảnh báo. Trang review đã được tạo và kiểm tra cú pháp JavaScript. Thành viên nhóm chưa xác nhận review ảnh hoặc F1. |
+| 3 | Lê Đức Lượng | Antigravity | Viết `validator/validate.py` bắt đủ 9 loại lỗi luật (`missing_image`, `wrong_hash`, `invalid_class`, `bbox_out_of_bounds`, `duplicate_box`, `scene_leak`, `guideline_mismatch`, `invalid_category_id`, `thing_overlap`) và sinh ứng viên đối chiếu bằng pixel mask. | Ở bản đầu tiên, nhánh kiểm tra `bbox_drift` khi không ghép được box chính báo nhầm các segment vật nhỏ nằm trọn bên trong một box nhóm cùng lớp (báo `"box chỉ chứa 100% pixel segment"`), khiến lô sạch `runs/clean` xuất hiện 8 ảnh ứng viên nhiễu. | Lượng kiểm tra lại danh sách ứng viên trên lô sạch (`runs/clean`), phát hiện lỗi điều kiện `cs(si, bi) >= 0.5` chưa được loại trừ ở nhánh `else`, bổ sung điều kiện `if inside: continue` và đo phân phối `overflow` trên 1474 cặp tự nhiên để chốt ngưỡng `DRIFT_OVERFLOW = 0.04`. Kết quả lô sạch giảm xuống còn 4 ảnh nhiễu tự nhiên và F1 lỗi luật đạt 1.0 trên cả 5 seed thử nghiệm (`4007`, `11`, `22`, `33`, `o777`). |
 
 ## Mã được AI hỗ trợ trong yêu cầu 2
 
